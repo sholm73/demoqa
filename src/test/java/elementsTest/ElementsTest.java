@@ -1,13 +1,12 @@
 package elementsTest;
 
+import baseTest.BaseTest;
 import org.junit.Test;
 
-import java.io.File;
-
-public class ElementsTest {
+public class ElementsTest extends BaseTest {
 
     @Test
     public void openElementsPage() {
-
+        elementsPage.openElementsPage();
     }
 }
