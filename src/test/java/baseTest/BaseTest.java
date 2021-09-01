@@ -14,19 +14,15 @@ public class BaseTest {
     protected ElementsPage elementsPage;
 
     @Before
-    public void setUp() {
-        webDriver = initDriver();
-        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-    }
-
-    private WebDriver initDriver() {
+    public void setUp(){
         WebDriverManager.chromedriver().setup();
         webDriver = new ChromeDriver();
-        return webDriver;
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        elementsPage = new ElementsPage(webDriver);
     }
 
     @After
-    public void shutDown() {
+    public void tearDown(){
         webDriver.quit();
     }
 }
