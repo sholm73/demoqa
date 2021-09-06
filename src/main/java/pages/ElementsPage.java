@@ -12,12 +12,12 @@ public class ElementsPage extends ParentPage{
 
     public ElementsPage openElementsPage(){
         try {
-            webDriver.get("https://demoqa.com/");
+            webDriver.get(baseURL);
             webDriver.findElement(By.xpath(".//*/h5[text()='Elements']")).click();
-            logger.info("Elements page was opened");
+            logger.info("Elements Page was opened");
         } catch (Exception e){
-            logger.error("Can`t work with Elements page");
-            Assert.fail("Can`t work with Elements page");
+            logger.error("Can`t work with Elements Page");
+            Assert.fail("Can`t work with Elements Page");
         }
         return this;
     }

@@ -6,12 +6,14 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.ElementsPage;
+import pages.FormsPage;
 
 import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
     WebDriver webDriver;
     protected ElementsPage elementsPage;
+    protected FormsPage formsPage;
 
     @Before
     public void setUp(){
@@ -19,6 +21,7 @@ public class BaseTest {
         webDriver = new ChromeDriver();
         webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         elementsPage = new ElementsPage(webDriver);
+        formsPage = new FormsPage(webDriver);
     }
 
     @After
